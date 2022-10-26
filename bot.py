@@ -5,7 +5,7 @@ import questions, different_types
 
 # Запуск бота
 async def main():
-    bot = Bot(token="5747035667:AAE7UGH3n_BEUONOQHkZI8P_yTLlcA-xh_U")
+    bot = Bot(token="ВАШ НОМЕР")
     dp = Dispatcher()
 
     dp.include_router(questions.router)
