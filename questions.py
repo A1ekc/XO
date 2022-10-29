@@ -8,28 +8,42 @@ from aiogram.dispatcher.filters import CommandObject
 
 router = Router()  # [1]
 
+info = []#для лога
+
 
 @router.message(Text(text="Привет", text_ignore_case=True))
 async def answer_no(message: Message):
+    info.append(client)# для лога
     await message.answer(
         "Мы рады видеть вас, для начала общения введите /start",
         reply_markup=ReplyKeyboardRemove()
+        info.append(rob)# для лога
     )
+return info# для лога
 @router.message(Text(text="Пока", text_ignore_case=True))
 async def answer_no(message: Message):
+    info.append(client)# для лога
     await message.answer(
         "Спасибо, что воспользовались ботом!",
         reply_markup=ReplyKeyboardRemove()
+        info.append(rob)# для лога
     )
+return info# для лога
 @router.message(commands=["start"])
 async def cmd_start(message: types.Message):
+    info.append(client)# для лога
     await message.answer("Здравствуйте! Примите, пожалуйста, участие в опросе, посвященном исследованию оценки удовлетворенности покупкой. Ваши ответы и пожелания помогут исправить имеющиеся ошибки и улучшить качество товаров! Введите /name")
+    info.append(rob)# для лога
+return info# для лога
 @router.message(Text(text="Режим работы", text_ignore_case=True))
 async def answer_no(message: Message):
+    info.append(client)# для лога
     await message.answer(
         "Ежедневно с 9:00 до 20:00",
         reply_markup=ReplyKeyboardRemove()
+        info.append(rob)# для лога
     )
+return info# для лога
 @router.message(Text(text="Адрес", text_ignore_case=True))
 async def answer_no(message: Message):
     await message.answer(

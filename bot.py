@@ -1,6 +1,9 @@
 import asyncio
 from aiogram import Bot, Dispatcher
 import questions, different_types
+### для лога
+from csv_create import creating
+from log import writing_scv
 
 
 # Запуск бота
@@ -19,3 +22,9 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+#для лога
+path = 'Robotmagazine.csv'
+valid = exists(path)
+if not valid:
+   creating()
